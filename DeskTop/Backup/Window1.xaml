@@ -1,0 +1,25 @@
+﻿<Window x:Class="DragDrop.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:DragDrop"
+    Title="Window1" Height="400" Width="500">
+    <Window.Resources>
+        <DataTemplate x:Key="listBoxTemplate" DataType="{x:Type local:DataItem}">
+            <TextBlock Text="{Binding Header}"/>
+        </DataTemplate>
+        <HierarchicalDataTemplate x:Key="treeViewTemplate" DataType="{x:Type local:DataItem}" 
+                                  ItemsSource="{Binding Items}">
+            <TextBlock Text="{Binding Header}"/>
+        </HierarchicalDataTemplate>
+    </Window.Resources>
+    <Grid x:Name="mTopLevelGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="mListBox" Grid.Column="0" ItemsSource="{Binding Source={x:Static local:Data.Instance}, Path=ListBoxItems}" ItemTemplate="{StaticResource listBoxTemplate}"/>
+        <TreeView x:Name="mTreeView" Grid.Column="2" ItemsSource="{Binding Source={x:Static local:Data.Instance}, Path=TreeViewItems}" ItemTemplate="{StaticResource treeViewTemplate}"
+                  AllowDrop="True" DragDrop.DragOver="OnDragOver" DragDrop.Drop="OnDrop"/>
+    </Grid>
+</Window>

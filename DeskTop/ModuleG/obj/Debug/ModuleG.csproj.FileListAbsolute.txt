@@ -1,0 +1,15 @@
+C:\Users\zoe\source\repos\DeskTop\ModuleG\bin\Debug\ModuleG.exe.config
+C:\Users\zoe\source\repos\DeskTop\ModuleG\bin\Debug\ModuleG.exe
+C:\Users\zoe\source\repos\DeskTop\ModuleG\bin\Debug\ModuleG.pdb
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\ModuleG.csprojAssemblyReference.cache
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\MainWindow.g.cs
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\App.g.cs
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\ModuleG_MarkupCompile.cache
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\ModuleG_MarkupCompile.lref
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\MainWindow.baml
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\ModuleG.g.resources
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\ModuleG.Properties.Resources.resources
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\ModuleG.csproj.GenerateResource.cache
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\ModuleG.csproj.CoreCompileInputs.cache
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\ModuleG.exe
+C:\Users\zoe\source\repos\DeskTop\ModuleG\obj\Debug\ModuleG.pdb

@@ -1,0 +1,153 @@
+﻿<UserControl x:Class="Operation.View.Book"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+           x:Name="root" 
+        xmlns:prism="http://prismlibrary.com/"
+       
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             d:DesignHeight="450" d:DesignWidth="800"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <Style x:Key="ListViewItemStyle" TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </UserControl.Resources>
+   
+
+    <Grid Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,10,10,10">
+
+        <Grid.RowDefinitions >
+            <RowDefinition  />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="auto">
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <Button Command="{Binding EditCanComamnd}" ToolTip="修改" Width="100">
+
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" >
+                            <!--<Image Stretch="None" VerticalAlignment="Center" Source="../Images/List_Edit.png"/>-->
+                            <TextBlock Text="修改" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Command="{Binding DelCommand}" ToolTip="删除" Width="100">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" >
+                            <!--<Image Stretch="None" VerticalAlignment="Center" Source="../Images/List_Del.png"/>-->
+                            <TextBlock Text="删除" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Command="{Binding AddCommand}" ToolTip="增加"  Width="100">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" >
+                            <!--<Image Stretch="None" VerticalAlignment="Center" Source="../Images/List_Del.png"/>-->
+                            <TextBlock Text="增加" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button  ToolTip="前进按钮"  Command="{Binding ForWardCommand}"  Width="100">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" >
+                            <!--<Image Stretch="None" VerticalAlignment="Center" Source="../Images/List_Del.png"/>-->
+                            <TextBlock Text="前进按钮" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+            <DataGrid Name="BookGrid" ItemsSource="{Binding mylist}" AutoGenerateColumns="False" CanUserAddRows="False"  Width="Auto"  Grid.Column="0" Grid.Row="0" BorderThickness="1" CanUserResizeColumns="True"  GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="Black" SelectedItem="{Binding Book}" EnableColumnVirtualization="False" SelectionChanged="BookGrid_SelectionChanged" >
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="LightBlue" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <!--当鼠标经过时 改变颜色-->
+                                <Setter Property="Background" Value="SkyBlue"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <DataGrid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </DataGrid.Background>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.Header>
+                            <CheckBox IsChecked="{Binding DataContext.IsSelectAll,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,RelativeSource={RelativeSource AncestorType=DataGrid, AncestorLevel=1 }}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <i:InvokeCommandAction Command="{Binding DataContext.SelectAllCommand ,RelativeSource={RelativeSource AncestorType=DataGrid, AncestorLevel=1 }}" ></i:InvokeCommandAction>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </CheckBox>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Margin="3" IsChecked="{Binding IsSelected,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Click">
+                                            <i:InvokeCommandAction Command="{Binding DataContext.SelectCommand ,RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=1 }}" CommandParameter="{Binding BookId}" ></i:InvokeCommandAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Binding="{Binding BookName, Mode=TwoWay}" Header="书名" Width="50" x:Name="BookName" />
+                    <DataGridTextColumn Binding="{Binding BookId,Mode=TwoWay}" Header="序列号" Width="50" />
+                    <DataGridTextColumn Binding="{Binding Publisher,Mode=TwoWay}" Header="发行者" Width="50"/>
+                    <DataGridTextColumn Binding="{Binding BookAuthor,Mode=TwoWay}" Header="作者" Width="50"/>
+                    <DataGridTextColumn Binding="{Binding BookType,Mode=TwoWay}" Header="类型" Width="50" />
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <!--<Button  Width="40" Height="20" Content="编辑"   FontSize="10"   Command="{Binding EditCommand}"></Button>-->
+                                        <Button Command="{Binding DataContext.EditCommand,RelativeSource={RelativeSource AncestorType=UserControl}}" ToolTip="修改">
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <TextBlock Text="修改" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                        <Button  Width="40" Height="20" ToolTip="删除" FontSize="10" Command="{Binding DataContext.DelCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" >
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <TextBlock Text="删除" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </Button>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+
+        <Canvas Visibility="Hidden" Name="textCanvas">
+            <TextBox Text="{Binding DataContext.SelectItem.BookName}" Name="txtBookName"></TextBox>
+            <Button Content="取消" Command="{ Binding CancelCommand}"></Button>
+            <Button Content="保存" Command="{ Binding SaveCommand}"></Button>
+        </Canvas>
+        <Popup></Popup>
+        <TextBlock Text="{Binding}" ></TextBlock>
+    </Grid >
+    
+    
+</UserControl>

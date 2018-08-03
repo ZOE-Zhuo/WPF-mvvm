@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="ModuleA.Hello"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModuleA"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="200">
+    <Grid>
+        <DockPanel>
+                <Menu  DockPanel.Dock="Top">
+                    <MenuItem  Header="导入图片" Command="{Binding OpenImageCommand}"></MenuItem>
+                    <MenuItem Header="放大" Command="{ Binding EnlargeComamand }"></MenuItem>
+                <MenuItem Header="缩小" Command="{ Binding LessenComamand }"></MenuItem>
+                    <MenuItem Header="还原"></MenuItem>
+                </Menu>
+                </DockPanel>
+                <Image Source="{Binding ImagePath}" Stretch="None">
+                    <Image.LayoutTransform>
+                        <ScaleTransform ScaleX="{Binding Zoom}" ScaleY="{Binding Zoom}"/>
+                    </Image.LayoutTransform>
+                </Image>
+                
+    </Grid>
+</UserControl>

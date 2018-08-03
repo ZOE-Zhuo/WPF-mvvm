@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="ModuleF.View.ModuleF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:local="clr-namespace:ModuleF.View"
+             xmlns:prsim="http://prismlibrary.com/"
+             xmlns:vm="clr-namespace:ModuleF.ViewModule.ModuleFViewModel"          
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="GoForward">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <TextBlock Text="导航demo"></TextBlock>
+
+        <!--<ContentControl prsim:RegionManager.RegionName="NavigationDemo"></ContentControl>-->
+        <Button Content="前进至ViewA"  Grid.Row="1" Margin="0,15,0,0" Padding="15,8">
+            <i:Interaction.Triggers >
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding GoForwardCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+              
+    </Grid>
+    
+</UserControl>

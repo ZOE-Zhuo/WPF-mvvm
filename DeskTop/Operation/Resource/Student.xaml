@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Operation.Resource"
+                    xmlns:c="clr-namespace:System;assembly=mscorlib"
+                    xmlns:c1="clr-namespace:System.Collections;assembly=mscorlib"
+                   
+    
+    
+  ></ResourceDictionary>

@@ -1,0 +1,6 @@
+C:\Users\zoe\source\repos\DeskTop\ModuleF\obj\Debug\ModuleF.csprojAssemblyReference.cache
+C:\Users\zoe\source\repos\DeskTop\ModuleF\obj\Debug\View\ModuleF.g.cs
+C:\Users\zoe\source\repos\DeskTop\ModuleF\obj\Debug\View\ViewA.g.cs
+C:\Users\zoe\source\repos\DeskTop\ModuleF\obj\Debug\ModuleF_MarkupCompile.cache
+C:\Users\zoe\source\repos\DeskTop\ModuleF\obj\Debug\ModuleF_MarkupCompile.lref
+C:\Users\zoe\source\repos\DeskTop\ModuleF\obj\Debug\GeneratedInternalTypeHelper.g.cs

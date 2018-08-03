@@ -1,0 +1,5 @@
+C:\Users\zoe\source\repos\DeskTop\ModuleService\bin\Debug\ModuleService.dll
+C:\Users\zoe\source\repos\DeskTop\ModuleService\bin\Debug\ModuleService.pdb
+C:\Users\zoe\source\repos\DeskTop\ModuleService\obj\Debug\ModuleService.csproj.CoreCompileInputs.cache
+C:\Users\zoe\source\repos\DeskTop\ModuleService\obj\Debug\ModuleService.dll
+C:\Users\zoe\source\repos\DeskTop\ModuleService\obj\Debug\ModuleService.pdb

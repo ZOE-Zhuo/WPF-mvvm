@@ -1,0 +1,16 @@
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\ListView.csprojAssemblyReference.cache
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\App.g.cs
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\ListView_MarkupCompile.cache
+C:\Users\zoe\source\repos\DeskTop\ListView\bin\Debug\ListView.exe.config
+C:\Users\zoe\source\repos\DeskTop\ListView\bin\Debug\ListView.exe
+C:\Users\zoe\source\repos\DeskTop\ListView\bin\Debug\ListView.pdb
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\MainWindow.g.cs
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\ListView_MarkupCompile.lref
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\MainWindow.baml
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\ListView.g.resources
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\ListView.Properties.Resources.resources
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\ListView.csproj.GenerateResource.cache
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\ListView.csproj.CoreCompileInputs.cache
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\ListView.exe
+C:\Users\zoe\source\repos\DeskTop\ListView\obj\Debug\ListView.pdb

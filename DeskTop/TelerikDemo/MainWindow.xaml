@@ -1,0 +1,60 @@
+﻿<Window x:Class="TelerikDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelerikDemo"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <StackPanel x:Name="LayoutRoot" Background="White">
+            <telerik:RadGridView  ShowGroupPanel="False" AutoGenerateColumns="False" x:Name="grd1" ItemsSource="{Binding Path=LstData, Mode=TwoWay}" SelectionMode="Extended" SelectedItem="CurrentItem">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewSelectColumn  />
+                    <telerik:GridViewColumn Header="姓名">
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox x:Name="txtName" Text="{Binding Name,Mode=TwoWay}" VerticalAlignment="Center" Height="22"></TextBox>
+                            </DataTemplate>
+
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                    <telerik:GridViewColumn Header="年龄">
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox x:Name="txtAge" Text="{Binding Age,Mode=TwoWay}" VerticalAlignment="Center" Height="22"></TextBox>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                    <telerik:GridViewColumn Header="测试项" MouseDown="GridViewColumn_MouseEnter">
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox x:Name="txtAge" Text="{Binding Age,Mode=TwoWay}" VerticalAlignment="Center" Height="22"></TextBox>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                        
+                    </telerik:GridViewColumn>
+                    <telerik:GridViewColumn Header="操作">
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <telerik:RadButton Content="+" Width="20" Height="20" VerticalAlignment="Center"  x:Name="btnAdd" Click="btnAdd_Click"/>
+                                    <telerik:RadButton Content="-" Margin="5,0,0,0" Width="20" Height="20" VerticalAlignment="Center" x:Name="btnSub" Click="btnSub_Click"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+            <TabControl>
+                <TabItem Header="详细信息概览"></TabItem>
+               
+                    <TextBlock Text="{Binding CurrentItem.Name}" Width="100"></TextBlock>
+                
+            </TabControl>
+            <telerik:RadButton Height="22" Width="100"  Margin="0,10,0,0" x:Name="btnSave" Click="btnSave_Click">全部保存</telerik:RadButton>
+        </StackPanel>
+    </Grid>
+</Window>

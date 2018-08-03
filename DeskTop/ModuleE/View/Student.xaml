@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="ModuleE.View.Student"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModuleE.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+
+        <Label Content="学号" Height="28" HorizontalAlignment="Left" Margin="54,23,0,0" Name="labelStudentId" VerticalAlignment="Top" />
+        <TextBox Text="{Binding Student.StudentId}" IsReadOnly="True" Height="23" HorizontalAlignment="Right" Margin="0,27,289,0" Name="textBoxStudentId" VerticalAlignment="Top" Width="120" />
+        <Label Content="姓名" Height="28" HorizontalAlignment="Left" Margin="54,61,0,0" Name="labelStudentName" VerticalAlignment="Top" />
+        <TextBox Text="{Binding Student.StudentName}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="94,65,0,0" Name="textBoxStudentName" VerticalAlignment="Top" Width="120" />
+        <Label Content="年龄" Height="28" HorizontalAlignment="Left" Margin="54,94,0,0" Name="labelStudentAge" VerticalAlignment="Top" />
+        <TextBox Text="{Binding Student.StudentAge}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="94,99,0,0" Name="textBoxStudentAge" VerticalAlignment="Top" Width="120" />
+        <Label Content="Email" Height="28" HorizontalAlignment="Left" Margin="50,138,0,0" Name="labelStudentEmail" VerticalAlignment="Top" />
+        <TextBox Text="{Binding Student.StudentEmail}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="94,141,0,0" Name="textBoxStudentEmail" VerticalAlignment="Top" Width="120" />
+        <Label Content="性别" Height="28" HorizontalAlignment="Left" Margin="57,176,0,0" Name="labelStudentSex" VerticalAlignment="Top" />
+        <TextBox Text="{Binding Student.StudentSex}" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="94,180,0,0" Name="textBoxStudentSex" VerticalAlignment="Top" Width="120" />
+        <Button Command="{Binding ShowCommand}" Content="显示" Height="23" HorizontalAlignment="Left" Margin="345,27,0,0" Name="buttonShow" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</UserControl>
